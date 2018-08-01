@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/insurance_data_set.iml" filepath="$PROJECT_DIR$/.idea/modules/insurance_data_set.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Insurance_Data_Set.iml" filepath="$PROJECT_DIR$/.idea/modules/Insurance_Data_Set.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/insurance_data_set-build.iml" filepath="$PROJECT_DIR$/.idea/modules/insurance_data_set-build.iml" />
     </modules>
   </component>
