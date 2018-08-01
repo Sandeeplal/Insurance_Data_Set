@@ -19,7 +19,7 @@ object dataRead {
     val_df1.persist()
     val_df1.createOrReplaceTempView("Customer")
     val success_rate = sqlc.sql("Select (Select count(y) from Customer where y='yes')/count(*) from Customer")
-    println("Sucess_rate = " + success_rate.collectAsList().get(0).getDouble(0))
+    println("Success_rate = " + success_rate.collectAsList().get(0).getDouble(0))
     val failure_rate = sqlc.sql("Select (Select count(y) from Customer where y='no')/count(*) from Customer")
     println("failure_rate = " + failure_rate.collectAsList().get(0).getDouble(0))
     /// Using data frame methods calcaulat min, max and average; imported sql.functions
@@ -27,12 +27,19 @@ object dataRead {
     val avg_age = val_df1.select(mean("age"), max("age"), min("age")).collectAsList()
     println("Average age= " + avg_age.get(0).get(0) + "\nmax age = " + avg_age.get(0).get(1) + "\nmin age = " + avg_age.get(0).get(2))
 
+    //4. Check quality of customers by checking average balance, median balance of customers
     val bal = val_df1.select(avg("balance")).collectAsList()
     println("Average of Balance amount in account is" + bal.get(0).get(0))
+
+    //6. Check if marital status mattered for subscription to deposit.
+    val martial_stat = sqlc.sql("Select marital as Status_of_people, count(marital) as Count_of_people from(Select marital from Customer where y='yes') Group By marital Order By Count_of_people desc")
+    martial_stat.show()
+
+    // 8. Do feature engineering for column—age and find right age effect on campaign
     val age_in_sub = sqlc.sql("Select age, count(age) as No_of_people from(Select age from Customer where y='yes') Group By age Order By No_of_people desc")
     age_in_sub.show()
 
   }
 }
 
-case class Table(age: Int = 0, job: String, marital: String, education: String, default_val: String, balance: Int, housing: String, loan: String, contact: String, day: Int, month: String, duration: Int, campaign: Int, pdays: Int, previous: Int, poutcome: String, y: String)
+
