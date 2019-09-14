@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="insurance_data_set,Insurance_Data_Set" />
+    <profile name="sbt 1" modules="insurance_data_set_1805,Insurance_Data_Set" />
   </component>
 </project>

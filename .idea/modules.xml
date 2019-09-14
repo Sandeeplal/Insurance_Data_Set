@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Insurance_Data_Set.iml" filepath="$PROJECT_DIR$/.idea/modules/Insurance_Data_Set.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/insurance_data_set-build.iml" filepath="$PROJECT_DIR$/.idea/modules/insurance_data_set-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
     </modules>
   </component>
 </project>

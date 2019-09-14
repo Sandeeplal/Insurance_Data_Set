@@ -7,6 +7,8 @@ import org.apache.spark.sql.functions._
 object dataRead {
 
   def main(args: Array[String]): Unit = {
+
+//    Updating this functionality
     val sqlc = new SparkSession.Builder().master("local[*]").appName("SparkApp").enableHiveSupport().getOrCreate()
     val sc = sqlc.sparkContext
     sc.setLogLevel("ERROR")
